@@ -15,13 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0io-3K-rCM">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0io-3K-rCM">
                                 <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Neon-Source" translatesAutoresizingMaskIntoConstraints="NO" id="tsA-Yb-0Yw">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neon-Source" translatesAutoresizingMaskIntoConstraints="NO" id="tsA-Yb-0Yw">
                                         <rect key="frame" x="0.0" y="41.5" width="1366" height="982.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdX-UQ-H6i">
                                         <rect key="frame" x="284" y="1" width="69" height="41"/>
@@ -36,6 +34,15 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tsA-Yb-0Yw" secondAttribute="trailing" id="ISg-L5-6UO"/>
+                                    <constraint firstAttribute="bottom" secondItem="tsA-Yb-0Yw" secondAttribute="bottom" id="S8D-sr-R2S"/>
+                                    <constraint firstAttribute="bottom" secondItem="tsA-Yb-0Yw" secondAttribute="bottom" id="SkF-T5-nbj"/>
+                                    <constraint firstItem="tsA-Yb-0Yw" firstAttribute="leading" secondItem="0io-3K-rCM" secondAttribute="leading" id="bdR-v9-OvC"/>
+                                    <constraint firstItem="tsA-Yb-0Yw" firstAttribute="top" secondItem="0io-3K-rCM" secondAttribute="top" constant="41.5" id="cqQ-88-Bo0"/>
+                                    <constraint firstAttribute="trailing" secondItem="tsA-Yb-0Yw" secondAttribute="trailing" id="eQa-tB-juh"/>
+                                    <constraint firstItem="tsA-Yb-0Yw" firstAttribute="leading" secondItem="0io-3K-rCM" secondAttribute="leading" id="ia3-VU-GOO"/>
+                                </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3hU-RN-WgR">
                                 <rect key="frame" x="0.0" y="896" width="1366" height="128"/>
@@ -46,6 +53,12 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0io-3K-rCM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="f6y-BO-4qo"/>
+                            <constraint firstItem="0io-3K-rCM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fvp-dG-FRV"/>
+                            <constraint firstItem="0io-3K-rCM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gHW-93-IsC"/>
+                            <constraint firstAttribute="bottom" secondItem="0io-3K-rCM" secondAttribute="bottom" id="sPs-Ex-0F3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -64,15 +77,45 @@
                     <view key="view" contentMode="scaleToFill" id="WBd-X0-Hvm">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xvy-CX-rXr">
+                                <rect key="frame" x="410" y="57" width="546" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yUG-yQ-dPh">
+                                <rect key="frame" x="410" y="21" width="546" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YUF-Uo-S9o">
+                                <rect key="frame" x="415" y="90" width="541" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="saturation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc6-oE-2ys">
+                                <rect key="frame" x="412" y="58.5" width="542" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bright" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Q-U8-goa">
+                                <rect key="frame" x="412" y="91.5" width="542" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hue" translatesAutoresizingMaskIntoConstraints="NO" id="2ca-z1-et5">
+                                <rect key="frame" x="412" y="22" width="542" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.11764705882352941" blue="0.12549019607843137" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="7PR-ks-cnF"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="por-IX-haS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="563"/>
+            <point key="canvasLocation" x="320.64421669106878" y="339.84375"/>
         </scene>
     </scenes>
     <resources>
         <image name="Neon-Source" width="2732" height="2048"/>
+        <image name="bright" width="2444" height="138"/>
+        <image name="hue" width="2444" height="138"/>
+        <image name="saturation" width="2444" height="138"/>
     </resources>
 </document>
