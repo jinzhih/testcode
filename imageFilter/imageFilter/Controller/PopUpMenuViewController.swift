@@ -14,7 +14,11 @@ class PopUpMenuViewController: UIViewController {
     var BriSlider: BrightnessSlider!
     @objc func numberValueChanged(sender: UISlider) {
         hueSlider.thumbTintColor = generateColor(forcolors: hueSlider.value)
+        hueSlider.awakeFromNib(color: generateColor(forcolors: hueSlider.value))
     }
+    @objc func hueThumReset(sender: UISlider) {
+           hueSlider.thumbTintColor = generateColor(forcolors: hueSlider.value)
+       }
     @objc func satNumberValueChanged(sender: UISlider) {
         SatSlider.thumbTintColor = satGenerateColor(forcolors: SatSlider.value)
     }
@@ -35,12 +39,16 @@ class PopUpMenuViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         hueSlider = HueGraindentSlider(frame: CGRect(x: 400, y: 30, width: 500, height: 2))
         hueSlider.value = 0.5
         hueSlider.thumbTintColor = generateColor(forcolors: hueSlider.value)
         hueSlider.isContinuous = true
+        hueSlider.awakeFromNib(color: generateColor(forcolors: hueSlider.value))
         hueSlider.addTarget (self,
                              action: #selector(numberValueChanged),for: UIControl.Event.valueChanged)
+        hueSlider.addTarget (self,
+                             action: #selector(HueGraindentSlider.awakeFromNib),for: UIControl.Event.touchCancel)
         view.addSubview(hueSlider)
         
         SatSlider = SaturationSlider(frame: CGRect(x: 400, y: 60, width: 500, height: 2))

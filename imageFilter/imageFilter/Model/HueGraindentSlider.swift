@@ -17,10 +17,12 @@ class HueGraindentSlider: UISlider {
 
     @IBInspectable var sliderThumbImage: UIImage? {
         didSet {
-            setup()
+            setThumbImage(sliderThumbImage, for: .normal)
         }
     }
-    
+    @IBInspectable var trackHeight: CGFloat = 3
+    @IBInspectable var thumbRadius: CGFloat = 10
+ 
     
     func setup() {
       
@@ -34,8 +36,7 @@ class HueGraindentSlider: UISlider {
             size: self.trackRect(forBounds: self.bounds).size,
             colorSet: [UIColor(hue: 1, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.9, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.8, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.7, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.6, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.5, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.4, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.3, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.2, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.1, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0, saturation: 1, brightness: 1, alpha: 1).cgColor,]),
                                   for: .normal)
-          //  self.setThumbImage(sliderThumbImage, for: .normal)
-          //  self.setThumbImage(CGRect(x: 0,y: 0,width: 4,height: 4), for: .highlighted)
+            
         } catch {
            // self.minimumTrackTintColor = minTrackStartColor
             self.maximumTrackTintColor = maxTrackColor
@@ -63,18 +64,48 @@ class HueGraindentSlider: UISlider {
     }
 
     override func trackRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(
-            x: bounds.origin.x,
-            y: bounds.origin.y,
-            width: bounds.width,
-            height: thickness
-        )
+//        return CGRect(
+//            x: bounds.origin.x,
+//            y: bounds.origin.y,
+//            width: bounds.width,
+//            height: thickness
+//        )
+        var newRect = super.trackRect(forBounds: bounds)
+               newRect.size.height = trackHeight
+               return newRect
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
+    func awakeFromNib(color: UIColor) {
+        super.awakeFromNib()
+        let thumb = thumbImage(radius: thumbRadius, color: color)
+        let thumbHighlighted = thumbImage(radius: thumbRadius*2, color: color)
+        setThumbImage(thumb, for: .normal)
+        setThumbImage(thumbHighlighted, for: .highlighted)
+
+    }
+    
+    private func thumbImage(radius: CGFloat, color: UIColor) -> UIImage {
+            var thumbView: UIView = {
+            let thumb = UIView()
+                   thumb.backgroundColor = color
+                   thumb.layer.borderWidth = 0.4
+                   thumb.layer.borderColor = UIColor.darkGray.cgColor
+            return thumb
+        }()
+        thumbView.frame = CGRect(x: 0, y: radius / 2, width: radius, height: radius)
+        thumbView.layer.cornerRadius = radius / 2
+
+        let renderer = UIGraphicsImageRenderer(bounds: thumbView.bounds)
+       
+        return renderer.image { rendererContext in
+            thumbView.layer.render(in: rendererContext.cgContext)
+        }
+    }
+ 
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
