@@ -9,7 +9,7 @@
 import UIKit
 @IBDesignable
 class HueGraindentSlider: UISlider {
-    @IBInspectable var thickness: CGFloat = 2 {
+    @IBInspectable var thickness: CGFloat = 3 {
         didSet {
             setup()
         }
