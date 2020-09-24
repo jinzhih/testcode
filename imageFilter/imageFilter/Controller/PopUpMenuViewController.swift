@@ -6,13 +6,20 @@
 //  Copyright © 2020 Jinzhi Hou. All rights reserved.
 //
 
-import UIKit
 
+
+import UIKit
+protocol DataDelegate {
+    func sendData(data : String)
+}
 class PopUpMenuViewController: UIViewController {
+    var delegate : DataDelegate?
     var hueSlider: HueGraindentSlider!
     var SatSlider: SaturationSlider!
     var BriSlider: BrightnessSlider!
+    var data : String = "hello"
     @objc func numberValueChanged(sender: UISlider) {
+        self.delegate?.sendData(data:self.data)
         hueSlider.thumbTintColor = generateColor(forcolors: hueSlider.value)
         hueSlider.awakeFromNib(color: generateColor(forcolors: hueSlider.value))
     }
@@ -47,8 +54,8 @@ class PopUpMenuViewController: UIViewController {
         hueSlider.awakeFromNib(color: generateColor(forcolors: hueSlider.value))
         hueSlider.addTarget (self,
                              action: #selector(numberValueChanged),for: UIControl.Event.valueChanged)
-        hueSlider.addTarget (self,
-                             action: #selector(HueGraindentSlider.awakeFromNib),for: UIControl.Event.touchCancel)
+//        hueSlider.addTarget (self,
+//                             action: #selector(HueGraindentSlider.awakeFromNib),for: UIControl.Event.touchCancel)
         view.addSubview(hueSlider)
         
         SatSlider = SaturationSlider(frame: CGRect(x: 400, y: 60, width: 500, height: 2))

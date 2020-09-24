@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import CoreImage
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, DataDelegate {
+    func sendData(data: String) {
+        if data != "" {
+            self.showHue.text = data
+        }
+    }
+    
 
+    @IBOutlet weak var showHue: UILabel!
     @IBOutlet weak var myPopUpContainerView: UIView!
     @IBOutlet weak var filterBtn: UIButton!
     override func viewDidLoad() {
@@ -17,12 +25,16 @@ class MainViewController: UIViewController {
 
         myPopUpContainerView.isHidden = true
         
+        
     }
     
     @IBAction func filterBtnSelected(_ sender: UIButton) {
         
         self.myPopUpContainerView.isHidden = false
-        
+       
     }
+    
+   
+    
     
 }

@@ -36,6 +36,12 @@
 		77DD36A2251C5D8F00C0492D /* SaturationSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationSlider.swift; sourceTree = "<group>"; };
 		77DD36A4251C63E900C0492D /* BrightnessSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessSlider.swift; sourceTree = "<group>"; };
 		77DD36A7251C6B5600C0492D /* SF-UI-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Regular.otf"; sourceTree = "<group>"; };
+		77DD36AA251CBA8300C0492D /* libGPUImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGPUImage.a; path = "../../GPUImage/build/Release-iphonesimulator/libGPUImage.a"; sourceTree = "<group>"; };
+		77DD36AC251CBAEE00C0492D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		77DD36AE251CBB1400C0492D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		77DD36B0251CBB1E00C0492D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		77DD36B2251CBB2800C0492D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		77DD36B4251CBB3200C0492D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			children = (
 				77DD361E251AF89F00C0492D /* imageFilter */,
 				77DD361D251AF89F00C0492D /* Products */,
+				77DD36A9251CBA8300C0492D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +122,19 @@
 				77DD36A7251C6B5600C0492D /* SF-UI-Display-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		77DD36A9251CBA8300C0492D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77DD36B4251CBB3200C0492D /* CoreVideo.framework */,
+				77DD36B2251CBB2800C0492D /* QuartzCore.framework */,
+				77DD36B0251CBB1E00C0492D /* AVFoundation.framework */,
+				77DD36AE251CBB1400C0492D /* OpenGLES.framework */,
+				77DD36AC251CBAEE00C0492D /* CoreMedia.framework */,
+				77DD36AA251CBA8300C0492D /* libGPUImage.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

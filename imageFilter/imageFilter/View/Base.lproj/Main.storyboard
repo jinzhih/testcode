@@ -37,6 +37,13 @@
                                             <action selector="filterBtnSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jh7-PY-3qy"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xP4-HH-40e">
+                                        <rect key="frame" x="611" y="7" width="82" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <color key="textColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -53,7 +60,7 @@
                                 <rect key="frame" x="0.0" y="896" width="1366" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="aS6-OA-dK1" kind="embed" id="4oU-nL-x1M"/>
+                                    <segue destination="aS6-OA-dK1" kind="embed" identifier="ToHSBMenuSegue" id="4oU-nL-x1M"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -69,11 +76,12 @@
                     <connections>
                         <outlet property="filterBtn" destination="cdX-UQ-H6i" id="QtX-NL-NX9"/>
                         <outlet property="myPopUpContainerView" destination="3hU-RN-WgR" id="k9h-qa-GIP"/>
+                        <outlet property="showHue" destination="xP4-HH-40e" id="Mzj-gp-KWk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="320.64421669106878" y="-102.5390625"/>
+            <point key="canvasLocation" x="-85" y="-305"/>
         </scene>
         <!--Pop Up Menu View Controller-->
         <scene sceneID="c9h-ZG-35g">
@@ -111,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="por-IX-haS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="320.64421669106878" y="339.84375"/>
+            <point key="canvasLocation" x="34" y="424"/>
         </scene>
     </scenes>
     <resources>
