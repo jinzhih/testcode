@@ -77,24 +77,6 @@
                     <view key="view" contentMode="scaleToFill" id="WBd-X0-Hvm">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xvy-CX-rXr">
-                                <rect key="frame" x="410" y="57" width="546" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YUF-Uo-S9o">
-                                <rect key="frame" x="415" y="90" width="541" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="saturation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc6-oE-2ys">
-                                <rect key="frame" x="412" y="58.5" width="542" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bright" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Q-U8-goa">
-                                <rect key="frame" x="412" y="91.5" width="542" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.11764705882352941" blue="0.12549019607843137" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="7PR-ks-cnF"/>
                     </view>
@@ -106,7 +88,5 @@
     </scenes>
     <resources>
         <image name="Neon-Source" width="2732" height="2048"/>
-        <image name="bright" width="2444" height="138"/>
-        <image name="saturation" width="2444" height="138"/>
     </resources>
 </document>

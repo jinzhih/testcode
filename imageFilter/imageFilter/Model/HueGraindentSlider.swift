@@ -20,7 +20,8 @@ class HueGraindentSlider: UISlider {
             setup()
         }
     }
-
+    
+    
     func setup() {
       
         let maxTrackColor = UIColor(hue: 1, saturation: 1, brightness: 1, alpha: 1)
@@ -33,13 +34,14 @@ class HueGraindentSlider: UISlider {
             size: self.trackRect(forBounds: self.bounds).size,
             colorSet: [UIColor(hue: 1, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.9, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.8, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.7, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.6, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.5, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.4, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.3, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.2, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.1, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0, saturation: 1, brightness: 1, alpha: 1).cgColor,]),
                                   for: .normal)
-            self.setThumbImage(sliderThumbImage, for: .normal)
+          //  self.setThumbImage(sliderThumbImage, for: .normal)
+          //  self.setThumbImage(CGRect(x: 0,y: 0,width: 4,height: 4), for: .highlighted)
         } catch {
            // self.minimumTrackTintColor = minTrackStartColor
             self.maximumTrackTintColor = maxTrackColor
         }
     }
-
+    
     func gradientImage(size: CGSize, colorSet: [CGColor]) throws -> UIImage? {
         let tgl = CAGradientLayer()
         tgl.frame = CGRect.init(x:0, y:0, width:size.width, height: size.height)
@@ -78,6 +80,9 @@ class HueGraindentSlider: UISlider {
         super.init(coder: aDecoder)
         setup()
     }
+    
+    
+   
+    }
 
 
-}
