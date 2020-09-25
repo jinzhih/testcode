@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65A7846B251CDE5000B37AE8 /* PopUpMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A7846A251CDE5000B37AE8 /* PopUpMenuView.swift */; };
 		77DD3620251AF89F00C0492D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD361F251AF89F00C0492D /* AppDelegate.swift */; };
 		77DD3622251AF89F00C0492D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD3621251AF89F00C0492D /* SceneDelegate.swift */; };
 		77DD3624251AF89F00C0492D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD3623251AF89F00C0492D /* ViewController.swift */; };
@@ -14,14 +15,15 @@
 		77DD3629251AF8A100C0492D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DD3628251AF8A100C0492D /* Assets.xcassets */; };
 		77DD362C251AF8A100C0492D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DD362A251AF8A100C0492D /* LaunchScreen.storyboard */; };
 		77DD3637251B3A1600C0492D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD3636251B3A1600C0492D /* MainViewController.swift */; };
-		77DD3639251B3CE500C0492D /* PopUpMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD3638251B3CE500C0492D /* PopUpMenuViewController.swift */; };
 		77DD36A1251C312C00C0492D /* HueGraindentSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD36A0251C312C00C0492D /* HueGraindentSlider.swift */; };
 		77DD36A3251C5D8F00C0492D /* SaturationSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD36A2251C5D8F00C0492D /* SaturationSlider.swift */; };
 		77DD36A5251C63E900C0492D /* BrightnessSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD36A4251C63E900C0492D /* BrightnessSlider.swift */; };
 		77DD36A8251C6B5600C0492D /* SF-UI-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77DD36A7251C6B5600C0492D /* SF-UI-Display-Regular.otf */; };
+		77DD36F7251DC59200C0492D /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD36F6251DC59100C0492D /* Filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65A7846A251CDE5000B37AE8 /* PopUpMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMenuView.swift; sourceTree = "<group>"; };
 		77DD361C251AF89F00C0492D /* imageFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD361F251AF89F00C0492D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77DD3621251AF89F00C0492D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +33,6 @@
 		77DD362B251AF8A100C0492D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77DD362D251AF8A100C0492D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77DD3636251B3A1600C0492D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		77DD3638251B3CE500C0492D /* PopUpMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMenuViewController.swift; sourceTree = "<group>"; };
 		77DD36A0251C312C00C0492D /* HueGraindentSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueGraindentSlider.swift; sourceTree = "<group>"; };
 		77DD36A2251C5D8F00C0492D /* SaturationSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationSlider.swift; sourceTree = "<group>"; };
 		77DD36A4251C63E900C0492D /* BrightnessSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessSlider.swift; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		77DD36B0251CBB1E00C0492D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		77DD36B2251CBB2800C0492D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		77DD36B4251CBB3200C0492D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		77DD36F6251DC59100C0492D /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				77DD36A0251C312C00C0492D /* HueGraindentSlider.swift */,
 				77DD36A2251C5D8F00C0492D /* SaturationSlider.swift */,
 				77DD36A4251C63E900C0492D /* BrightnessSlider.swift */,
+				77DD36F6251DC59100C0492D /* Filter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				77DD3625251AF89F00C0492D /* Main.storyboard */,
+				65A7846A251CDE5000B37AE8 /* PopUpMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,7 +115,6 @@
 			children = (
 				77DD3623251AF89F00C0492D /* ViewController.swift */,
 				77DD3636251B3A1600C0492D /* MainViewController.swift */,
-				77DD3638251B3CE500C0492D /* PopUpMenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,12 +213,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DD36A1251C312C00C0492D /* HueGraindentSlider.swift in Sources */,
-				77DD3639251B3CE500C0492D /* PopUpMenuViewController.swift in Sources */,
 				77DD36A3251C5D8F00C0492D /* SaturationSlider.swift in Sources */,
 				77DD3624251AF89F00C0492D /* ViewController.swift in Sources */,
 				77DD3620251AF89F00C0492D /* AppDelegate.swift in Sources */,
 				77DD36A5251C63E900C0492D /* BrightnessSlider.swift in Sources */,
 				77DD3622251AF89F00C0492D /* SceneDelegate.swift in Sources */,
+				65A7846B251CDE5000B37AE8 /* PopUpMenuView.swift in Sources */,
+				77DD36F7251DC59200C0492D /* Filter.swift in Sources */,
 				77DD3637251B3A1600C0492D /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
