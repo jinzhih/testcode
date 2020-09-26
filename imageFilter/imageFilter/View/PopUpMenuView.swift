@@ -10,7 +10,8 @@ import UIKit
 
 protocol DataDelegate {
     func printThisString(value: Float, _ index: Int)
-    func hueChange(value: Float)
+    func hueChange(hue: Float, sat: Float, bri: Float)
+    func hsbAdustment(hue: Float, sat: Float, bri: Float)
     func satChange(value: Float)
     func briChange(value: Float)
 }
@@ -24,7 +25,7 @@ class PopUpMenuView: UIView {
       
       @objc func numberValueChanged(sender: UISlider) {
           delegate?.printThisString(value: sender.value, 0)
-          delegate?.hueChange(value: sender.value)
+          delegate?.hsbAdustment(hue: sender.value, sat:SatSlider.value, bri: BriSlider.value)
           hueSlider.thumbTintColor = generateColor(forcolors: hueSlider.value)
           hueSlider.awakeFromNib(color: generateColor(forcolors: hueSlider.value))
       }
@@ -33,13 +34,13 @@ class PopUpMenuView: UIView {
          }
       @objc func satNumberValueChanged(sender: UISlider) {
           delegate?.printThisString(value: sender.value, 1)
-          delegate?.satChange(value: sender.value)
+          delegate?.hsbAdustment(hue: sender.value, sat:SatSlider.value, bri: BriSlider.value)
           SatSlider.thumbTintColor = satGenerateColor(forcolors: SatSlider.value)
           SatSlider.awakeFromNib(color: satGenerateColor(forcolors: SatSlider.value))
       }
       @objc func briNumberValueChanged(sender: UISlider) {
           delegate?.printThisString(value: sender.value, 2)
-          delegate?.briChange(value: sender.value)
+          delegate?.hsbAdustment(hue: sender.value, sat:SatSlider.value, bri: BriSlider.value)
           BriSlider.thumbTintColor = briGenerateColor(forcolors: BriSlider.value)
           BriSlider.awakeFromNib(color: briGenerateColor(forcolors: BriSlider.value))
       }

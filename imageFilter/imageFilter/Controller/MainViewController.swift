@@ -19,8 +19,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var filterImage: UIImageView!
     
-    private var orignialImage: UIImage?
-    
+    var orignialImage: UIImage?
+    var processingImageAfterHue: UIImage?
+    var processingImageAfterSat: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         myPopUpContainerView.delegate = self
@@ -86,12 +87,15 @@ extension MainViewController: DataDelegate {
        
     }
     
-    func hueChange(value: Float) {
+    func hueChange(hue: Float, sat: Float, bri: Float) {
         guard let image = orignialImage  else {
-                   return
-               }
-        imageView.image = applyFilterTo(image: image, filterEffect: Filter(filterName: "CIHueAdjust", filterEffectValue: 3.14*(value-0.5)/0.5, filterEffectValueName: kCIInputAngleKey))
+            return
+        }
+        imageView.image = applyFilterTo(image: image, filterEffect: Filter(filterName: "CIHueAdjust", filterEffectValue: 3.14*(hue-0.5)/0.5, filterEffectValueName: kCIInputAngleKey))
+       
+        
            }
+        
     func satChange(value: Float) {
            guard let image = orignialImage  else {
                       return
@@ -105,7 +109,20 @@ extension MainViewController: DataDelegate {
                      }
         imageView.image = applyFilterTo(image: image, filterEffect: Filter(filterName: "CIColorControls", filterEffectValue: (value-0.5)/0.5, filterEffectValueName: kCIInputBrightnessKey))
                  }
-    }
-
     
+
+    func hsbAdustment(hue: Float, sat: Float, bri: Float){
+              guard let image = orignialImage  else {
+            return
+                    }
+        imageView.image = applyFilterTo(image: image, filterEffect: Filter(filterName: "CIHueAdjust", filterEffectValue: 3.14*(hue-0.5)/0.5, filterEffectValueName: kCIInputAngleKey))
+        processingImageAfterHue = imageView.image
+        imageView.image = applyFilterTo(image: processingImageAfterHue!, filterEffect: Filter(filterName: "CIColorControls", filterEffectValue: sat*2, filterEffectValueName: kCIInputSaturationKey))
+        processingImageAfterSat = imageView.image
+        imageView.image = applyFilterTo(image: processingImageAfterSat!, filterEffect: Filter(filterName: "CIColorControls", filterEffectValue: (bri-0.5)/0.5, filterEffectValueName: kCIInputBrightnessKey))
+        
+        
+                 }
+
+    }
 
