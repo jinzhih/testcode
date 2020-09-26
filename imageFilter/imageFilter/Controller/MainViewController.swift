@@ -11,8 +11,9 @@ import CoreImage
 
 class MainViewController: UIViewController {
     let context = CIContext()
-    @IBOutlet weak var showHue: UILabel!
+  
     @IBOutlet weak var myPopUpContainerView: PopUpMenuView!
+    @IBOutlet weak var mySecondPopUpView: PopUpMenuView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var filterBtn: UIButton!
     private var orignialImage: UIImage?
@@ -21,12 +22,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         myPopUpContainerView.delegate = self
         myPopUpContainerView.isHidden = true
+        mySecondPopUpView.isHidden = true
         orignialImage = imageView.image
     }
 
     
     @IBAction func filterBtnSelected(_ sender: UIButton) {
         self.myPopUpContainerView.isHidden = false
+        self.mySecondPopUpView.isHidden = false
        
     }
     
@@ -43,7 +46,6 @@ class MainViewController: UIViewController {
                let filterEffectValueName = filterEffect.filterEffectValueName{
                filter?.setValue(filterEffectValue, forKey: filterEffectValueName)
            }
-           print(filter?.value(forKey: kCIOutputImageKey))
            var filteredImage: UIImage?
            if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage,
            let cgiImageResult = context.createCGImage(output, from: output.extent){
@@ -58,7 +60,6 @@ class MainViewController: UIViewController {
 extension MainViewController: DataDelegate {
     func printThisString(value: Float, _ index: Int) {
        
-        showHue.text = "\(value)"
     }
     
     func hueChange(value: Float) {

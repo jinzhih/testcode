@@ -35,11 +35,13 @@ class PopUpMenuView: UIView {
           delegate?.printThisString(value: sender.value, 1)
           delegate?.satChange(value: sender.value)
           SatSlider.thumbTintColor = satGenerateColor(forcolors: SatSlider.value)
+          SatSlider.awakeFromNib(color: satGenerateColor(forcolors: SatSlider.value))
       }
       @objc func briNumberValueChanged(sender: UISlider) {
           delegate?.printThisString(value: sender.value, 2)
           delegate?.briChange(value: sender.value)
           BriSlider.thumbTintColor = briGenerateColor(forcolors: BriSlider.value)
+          BriSlider.awakeFromNib(color: briGenerateColor(forcolors: BriSlider.value))
       }
     
       func generateColor(forcolors currentVaule: Float) -> UIColor{
@@ -47,7 +49,7 @@ class PopUpMenuView: UIView {
       }
       
       func satGenerateColor(forcolors currentVaule: Float) -> UIColor{
-          return UIColor(hue: 1, saturation: CGFloat(currentVaule), brightness: 1, alpha: 1)
+        return UIColor(hue: 1, saturation: CGFloat(currentVaule), brightness: CGFloat(currentVaule+0.5), alpha: 1)
       }
       
       func briGenerateColor(forcolors currentVaule: Float) -> UIColor{
@@ -56,7 +58,11 @@ class PopUpMenuView: UIView {
       
     override func awakeFromNib() {
        
-         hueSlider = HueGraindentSlider(frame: CGRect(x: 400, y: 30, width: 500, height: 2))
+         hueSlider = HueGraindentSlider(frame: CGRect(x: 384, y: 40, width: 534, height: 4))
+         let hue = UILabel(frame:CGRect(x: 930, y: 32, width: 106, height: 24))
+         hue.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
+         hue.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
+         hue.text = "Hue"
          hueSlider.value = 0.5
          hueSlider.thumbTintColor = generateColor(forcolors: hueSlider.value)
          hueSlider.isContinuous = true
@@ -64,22 +70,35 @@ class PopUpMenuView: UIView {
          hueSlider.addTarget (self,
                               action: #selector(numberValueChanged),for: UIControl.Event.valueChanged)
          self.addSubview(hueSlider)
+         self.addSubview(hue)
          
-         SatSlider = SaturationSlider(frame: CGRect(x: 400, y: 60, width: 500, height: 2))
+         SatSlider = SaturationSlider(frame: CGRect(x: 384, y: 86.5, width: 534, height: 4))
+         let saturation = UILabel(frame:CGRect(x: 930, y: 74, width: 106, height: 24))
+         saturation.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
+         saturation.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
+         saturation.text = "Saturation"
          SatSlider.value = 0.5
          SatSlider.thumbTintColor = satGenerateColor(forcolors: SatSlider.value)
          SatSlider.isContinuous = true
+         SatSlider.awakeFromNib(color: satGenerateColor(forcolors: SatSlider.value))
          SatSlider.addTarget (self,
                               action: #selector(satNumberValueChanged),for: UIControl.Event.valueChanged)
-        
          self.addSubview(SatSlider)
-         BriSlider = BrightnessSlider(frame: CGRect(x: 400, y: 90, width: 500, height: 2))
+         self.addSubview(saturation)
+        
+         BriSlider = BrightnessSlider(frame: CGRect(x: 384, y: 133, width: 534, height: 4))
+         let bright = UILabel(frame:CGRect(x: 930, y: 120, width: 106, height: 24))
+         bright.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
+         bright.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
+         bright.text = "Brightness"
          BriSlider.value = 0.5
          BriSlider.thumbTintColor = briGenerateColor(forcolors: BriSlider.value)
          BriSlider.isContinuous = true
+         BriSlider.awakeFromNib(color: briGenerateColor(forcolors: BriSlider.value))
          BriSlider.addTarget (self,
                                action: #selector(briNumberValueChanged),for: UIControl.Event.valueChanged)
          
         self.addSubview(BriSlider)
+        self.addSubview(bright)
     }
 }

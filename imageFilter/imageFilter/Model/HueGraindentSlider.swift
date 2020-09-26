@@ -9,7 +9,7 @@
 import UIKit
 @IBDesignable
 class HueGraindentSlider: UISlider {
-    @IBInspectable var thickness: CGFloat = 3 {
+    @IBInspectable var thickness: CGFloat = 4 {
         didSet {
             setup()
         }
@@ -20,7 +20,7 @@ class HueGraindentSlider: UISlider {
             setThumbImage(sliderThumbImage, for: .normal)
         }
     }
-    @IBInspectable var trackHeight: CGFloat = 3
+    @IBInspectable var trackHeight: CGFloat = 4
     @IBInspectable var thumbRadius: CGFloat = 10
  
     
