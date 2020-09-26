@@ -11,11 +11,14 @@ import CoreImage
 
 class MainViewController: UIViewController {
     let context = CIContext()
+    var filterIsActive = false
+    let imgArray = [#imageLiteral(resourceName: "originalPen"), #imageLiteral(resourceName: "filter")]
   
     @IBOutlet weak var myPopUpContainerView: PopUpMenuView!
     @IBOutlet weak var mySecondPopUpView: PopUpMenuView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var filterBtn: UIButton!
+    @IBOutlet weak var filterImage: UIImageView!
+    
     private var orignialImage: UIImage?
     
     override func viewDidLoad() {
@@ -24,12 +27,15 @@ class MainViewController: UIViewController {
         myPopUpContainerView.isHidden = true
         mySecondPopUpView.isHidden = true
         orignialImage = imageView.image
+        
+        
     }
 
     
     @IBAction func filterBtnSelected(_ sender: UIButton) {
-        self.myPopUpContainerView.isHidden = false
-        self.mySecondPopUpView.isHidden = false
+        filterIsActive = filterIsActive == true ? false : true
+        changeFilterImage()
+        changePopMenueStatus()
        
     }
     
@@ -55,6 +61,24 @@ class MainViewController: UIViewController {
            
            return  filteredImage
        }
+    
+    func changeFilterImage() {
+        if filterIsActive == true {
+            filterImage.image = imgArray[1]
+        }else {
+            filterImage.image = imgArray[0]
+        }
+    }
+    
+    func changePopMenueStatus() {
+        if filterIsActive == true {
+            self.myPopUpContainerView.isHidden = false
+            self.mySecondPopUpView.isHidden = false
+        }else {
+            self.myPopUpContainerView.isHidden = true
+            self.mySecondPopUpView.isHidden = true
+        }
+    }
 }
 
 extension MainViewController: DataDelegate {
