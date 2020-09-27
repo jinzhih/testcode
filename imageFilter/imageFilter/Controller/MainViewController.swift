@@ -28,10 +28,12 @@ class MainViewController: UIViewController {
         myPopUpContainerView.isHidden = true
         mySecondPopUpView.isHidden = true
         orignialImage = imageView.image
-        
-        
     }
-
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        self.myPopUpContainerView.setNeedsLayout()
+        self.myPopUpContainerView.layoutIfNeeded()
+    }
     
     @IBAction func filterBtnSelected(_ sender: UIButton) {
         filterIsActive = filterIsActive == true ? false : true
@@ -123,6 +125,9 @@ extension MainViewController: DataDelegate {
         
         
                  }
+    
+    
+    
 
     }
 

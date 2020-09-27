@@ -63,16 +63,17 @@ class HueGraindentSlider: UISlider {
         return image!
     }
 
-    override func trackRect(forBounds bounds: CGRect) -> CGRect {
-//        return CGRect(
-//            x: bounds.origin.x,
-//            y: bounds.origin.y,
-//            width: bounds.width,
-//            height: thickness
-//        )
-        var newRect = super.trackRect(forBounds: bounds)
-               newRect.size.height = trackHeight
-               return newRect
+    override func trackRect(forBounds bounds: CGRect) -> CGRect { print(UIScreen.main.bounds.width)
+        return CGRect(
+            x: bounds.origin.x,
+            y: bounds.origin.y,
+            width: UIScreen.main.bounds.width/2,
+           
+            height: thickness
+        )
+//        var newRect = super.trackRect(forBounds: bounds)
+//               newRect.size.height = trackHeight
+//               return newRect
     }
 
     override init(frame: CGRect) {
@@ -111,9 +112,6 @@ class HueGraindentSlider: UISlider {
         super.init(coder: aDecoder)
         setup()
     }
-    
-    
-   
-    }
+}
 
 
