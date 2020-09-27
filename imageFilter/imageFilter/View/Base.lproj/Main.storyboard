@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,17 +17,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="imageFilter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0io-3K-rCM">
-                                <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Neon-Source" translatesAutoresizingMaskIntoConstraints="NO" id="tsA-Yb-0Yw">
-                                        <rect key="frame" x="0.0" y="41.5" width="1366" height="982.5"/>
+                                        <rect key="frame" x="0.0" y="41.5" width="1024" height="1324.5"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4E-Rp-cTF" customClass="PopUpMenuView" customModule="imageFilter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="839" width="1366" height="185"/>
+                                        <rect key="frame" x="0.0" y="1181" width="1024" height="185"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6n-YN-NQh">
                                                 <rect key="frame" x="8" y="8" width="139" height="40"/>
@@ -168,7 +168,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbn-hQ-WLY">
-                                        <rect key="frame" x="1055" y="-2" width="45" height="50"/>
+                                        <rect key="frame" x="713" y="-2" width="45" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="FS2-DI-W9X"/>
                                         </constraints>
@@ -182,7 +182,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1F-R0-9W9">
-                                        <rect key="frame" x="1135" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="793" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Cmw-CM-brf"/>
                                             <constraint firstAttribute="width" constant="45" id="bqo-5r-fzI"/>
@@ -197,7 +197,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGc-tS-a7J">
-                                        <rect key="frame" x="1215" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="873" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="3kt-wr-e9n"/>
                                             <constraint firstAttribute="height" constant="45" id="US1-Fb-wMB"/>
@@ -237,7 +237,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ky6-8R-Weq">
-                                        <rect key="frame" x="1295" y="5" width="36" height="36"/>
+                                        <rect key="frame" x="953" y="5" width="36" height="36"/>
                                         <color key="backgroundColor" red="0.8666666666666667" green="0.10196078431372549" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="0Ll-gV-8pN"/>
@@ -254,7 +254,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QwN-oT-SzU">
-                                        <rect key="frame" x="975" y="3" width="45" height="45"/>
+                                        <rect key="frame" x="633" y="3" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="fvv-qP-31D"/>
                                             <constraint firstAttribute="height" constant="45" id="n2q-Ce-ybO"/>
@@ -269,10 +269,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dw-h2-VMH">
-                                        <rect key="frame" x="0.0" y="41" width="1366" height="20"/>
+                                        <rect key="frame" x="0.0" y="41" width="1024" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hue, Saturation, Brightness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ig1-li-GFV">
-                                                <rect key="frame" x="588" y="0.5" width="190" height="19.5"/>
+                                                <rect key="frame" x="417" y="0.5" width="190" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="16"/>
                                                 <color key="textColor" red="0.4875126481" green="0.48365873100000001" blue="0.48356980090000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
