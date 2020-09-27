@@ -64,15 +64,12 @@ class BrightnessSlider: UISlider {
      }
 
      override func trackRect(forBounds bounds: CGRect) -> CGRect {
-//         return CGRect(
-//             x: bounds.origin.x,
-//             y: bounds.origin.y,
-//             width: bounds.width,
-//             height: thickness
-//         )
-        var newRect = super.trackRect(forBounds: bounds)
-                     newRect.size.height = trackHeight
-                     return newRect
+         return CGRect(
+             x: bounds.origin.x,
+             y: bounds.origin.y,
+             width: UIScreen.main.bounds.width/2,
+             height: thickness
+         )
      }
 
      override init(frame: CGRect) {

@@ -23,6 +23,9 @@ class PopUpMenuView: UIView {
       var hueSlider: HueGraindentSlider!
       var satSlider: SaturationSlider!
       var briSlider: BrightnessSlider!
+      var hueLable: UILabel!
+      var saturationLable: UILabel!
+      var brightLable: UILabel!
       let screenBounds:CGRect = UIScreen.main.bounds
       
       @objc func numberValueChanged(sender: UISlider) {
@@ -62,13 +65,12 @@ class PopUpMenuView: UIView {
     override func awakeFromNib() {
         
          hueSlider = HueGraindentSlider(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width/2, height: 4))
-         //satSlider = SaturationSlider()
-        // briSlider = BrightnessSlider()
          
-         let hue = UILabel(frame:CGRect(x: 930, y: 32, width: 106, height: 24))
-         hue.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
-         hue.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
-         hue.text = "Hue"
+         hueLable = UILabel(frame:CGRect(x: 0, y: 0, width: 106, height: 24))
+        
+         hueLable.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
+         hueLable.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
+         hueLable.text = "Hue"
          hueSlider.value = 0.5
          hueSlider.thumbTintColor = generateColor(forcolors: hueSlider.value)
          hueSlider.isContinuous = true
@@ -76,13 +78,13 @@ class PopUpMenuView: UIView {
          hueSlider.addTarget (self,
                               action: #selector(numberValueChanged),for: UIControl.Event.valueChanged)
          self.addSubview(hueSlider)
-         self.addSubview(hue)
+         self.addSubview(hueLable)
          
-         satSlider = SaturationSlider(frame: CGRect(x: 0, y: 0, width:1000, height: 4))
-         let saturation = UILabel(frame:CGRect(x: 930, y: 74, width: 106, height: 24))
-         saturation.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
-         saturation.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
-         saturation.text = "Saturation"
+         satSlider = SaturationSlider(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width/2, height: 4))
+         saturationLable = UILabel(frame:CGRect(x: 0, y: 0, width: 106, height: 24))
+         saturationLable.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
+         saturationLable.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
+         saturationLable.text = "Saturation"
          satSlider.value = 0.5
          satSlider.thumbTintColor = satGenerateColor(forcolors: satSlider.value)
          satSlider.isContinuous = true
@@ -90,13 +92,13 @@ class PopUpMenuView: UIView {
          satSlider.addTarget (self,
                               action: #selector(satNumberValueChanged),for: UIControl.Event.valueChanged)
          self.addSubview(satSlider)
-         self.addSubview(saturation)
+         self.addSubview(saturationLable)
         
-         briSlider = BrightnessSlider(frame: CGRect(x: 0, y: 0, width: 1000, height: 4))
-         let bright = UILabel(frame:CGRect(x: 930, y: 120, width: 106, height: 24))
-         bright.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
-         bright.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
-         bright.text = "Brightness"
+         briSlider = BrightnessSlider(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width/2, height: 4))
+         brightLable = UILabel(frame:CGRect(x: 0, y: 0, width: 106, height: 24))
+         brightLable.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
+         brightLable.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
+         brightLable.text = "Brightness"
          briSlider.value = 0.5
          briSlider.thumbTintColor = briGenerateColor(forcolors: briSlider.value)
          briSlider.isContinuous = true
@@ -105,34 +107,61 @@ class PopUpMenuView: UIView {
                                action: #selector(briNumberValueChanged),for: UIControl.Event.valueChanged)
          
         self.addSubview(briSlider)
-        self.addSubview(bright)
+        self.addSubview(brightLable)
         
         slidersAuthLayout()
+        lablesLayout()
     }
     
     private func slidersAuthLayout() {
         self.briSlider.snp.makeConstraints{ (make) in
          make.height.equalTo(4)
          make.bottom.equalToSuperview().offset(-40)
-         make.right.equalToSuperview().offset(-240)
-         make.left.equalToSuperview().offset(174)
+         make.right.equalToSuperview().offset(-UIScreen.main.bounds.width/4)
+         make.left.equalToSuperview().offset(UIScreen.main.bounds.width/4)
         }
         self.satSlider.snp.makeConstraints{ (make) in
          make.height.equalTo(4)
-            make.bottom.equalTo(self.briSlider).offset(-46.5)
-         make.right.equalToSuperview().offset(-240)
-         make.left.equalToSuperview().offset(174)
+         make.bottom.equalTo(self.briSlider).offset(-46.5)
+         make.right.equalToSuperview().offset(-UIScreen.main.bounds.width/4)
+         make.left.equalToSuperview().offset(UIScreen.main.bounds.width/4)
+            print(UIScreen.main.bounds.width/4)
         }
         self.hueSlider.snp.makeConstraints{ (make) in
          make.height.equalTo(4)
          make.bottom.equalTo(self.satSlider).offset(-46.5)
-make.right.equalToSuperview().offset(-screenBounds.width/4)
-         make.left.equalToSuperview().offset(screenBounds.width/4)
+         make.right.equalToSuperview().offset(-UIScreen.main.bounds.width/4)
+         make.left.equalToSuperview().offset(UIScreen.main.bounds.width/4)
+        }
+    }
+    
+    
+    private func lablesLayout() {
+        self.brightLable.snp.makeConstraints{ (make) in
+         
+         make.bottom.equalToSuperview().offset(-36.5)
+        // make.right.equalToSuperview().offset(-UIScreen.main.bounds.width/4)
+            
+         make.left.equalTo(self.briSlider.snp.left).offset(20+UIScreen.main.bounds.width/2)
+        }
+        self.saturationLable.snp.makeConstraints{ (make) in
+        
+         make.bottom.equalToSuperview().offset(-76.5)
+      //   make.right.equalToSuperview().offset(-UIScreen.main.bounds.width/4)
+            
+         make.left.equalTo(self.satSlider.snp.left).offset(20+UIScreen.main.bounds.width/2)
+        }
+        self.hueLable.snp.makeConstraints{ (make) in
+        make.bottom.equalToSuperview().offset(-116.5)
+        //make.right.equalToSuperview().offset(-UIScreen.main.bounds.width/4)
+           
+        make.left.equalTo(self.briSlider.snp.left).offset(20+UIScreen.main.bounds.width/2)
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         self.hueSlider.setNeedsLayout()
         self.hueSlider.layoutIfNeeded()
         self.hueSlider.setup()
@@ -146,5 +175,17 @@ make.right.equalToSuperview().offset(-screenBounds.width/4)
         self.briSlider.setNeedsLayout()
         self.briSlider.layoutIfNeeded()
         self.briSlider.setup()
+        
+        self.hueLable.setNeedsLayout()
+        self.hueLable.layoutIfNeeded()
+        
+        self.saturationLable.setNeedsLayout()
+        self.saturationLable.layoutIfNeeded()
+        
+        self.brightLable.setNeedsLayout()
+        self.brightLable.layoutIfNeeded()
+        
+        slidersAuthLayout()
+        lablesLayout()
     }
 }

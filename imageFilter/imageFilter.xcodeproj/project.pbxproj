@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		384153BE1EA1581AA726D867 /* Pods-imageFilter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imageFilter.debug.xcconfig"; path = "Target Support Files/Pods-imageFilter/Pods-imageFilter.debug.xcconfig"; sourceTree = "<group>"; };
 		65A7846A251CDE5000B37AE8 /* PopUpMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMenuView.swift; sourceTree = "<group>"; };
-		7766C9C425207C2B00ACA385 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		7766C9C425207C2B00ACA385 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		77DD361C251AF89F00C0492D /* imageFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imageFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD361F251AF89F00C0492D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77DD3621251AF89F00C0492D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,7 +144,6 @@
 				384153BE1EA1581AA726D867 /* Pods-imageFilter.debug.xcconfig */,
 				78DAF8EA90FFDD4D67A3A8C6 /* Pods-imageFilter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
