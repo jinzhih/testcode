@@ -8,25 +8,16 @@
 
 import UIKit
 @IBDesignable
+
 class HueGraindentSlider: UISlider {
     @IBInspectable var thickness: CGFloat = 4 {
         didSet {
             setup()
         }
     }
-
-    @IBInspectable var sliderThumbImage: UIImage? {
-        didSet {
-            setThumbImage(sliderThumbImage, for: .normal)
-        }
-    }
-    @IBInspectable var trackHeight: CGFloat = 4
     @IBInspectable var thumbRadius: CGFloat = 10
- 
     
     func setup() {
-      
-        let maxTrackColor = UIColor(hue: 1, saturation: 1, brightness: 1, alpha: 1)
         do {
             self.setMinimumTrackImage(try self.gradientImage(
             size: self.trackRect(forBounds: self.bounds).size,
@@ -38,11 +29,11 @@ class HueGraindentSlider: UISlider {
                                   for: .normal)
             
         } catch {
-           // self.minimumTrackTintColor = minTrackStartColor
-            self.maximumTrackTintColor = maxTrackColor
+           print("Unexpected error: \(error).")
+            
         }
     }
-    
+    //MARK:gradientImage for customized slider
     func gradientImage(size: CGSize, colorSet: [CGColor]) throws -> UIImage? {
         let tgl = CAGradientLayer()
         tgl.frame = CGRect.init(x:0, y:0, width:size.width, height: size.height)
@@ -55,27 +46,13 @@ class HueGraindentSlider: UISlider {
         UIGraphicsBeginImageContextWithOptions(size, tgl.isOpaque, 0.0);
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         tgl.render(in: context)
-        let image =
-
-    UIGraphicsGetImageFromCurrentImageContext()?.resizableImage(withCapInsets:
+        let image = UIGraphicsGetImageFromCurrentImageContext()?.resizableImage(withCapInsets:
         UIEdgeInsets.init(top: 0, left: size.height, bottom: 0, right: size.height))
         UIGraphicsEndImageContext()
         return image!
     }
 
-    override func trackRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(
-            x: bounds.origin.x,
-            y: bounds.origin.y,
-            width: UIScreen.main.bounds.width/2,
-            height: thickness
-        )
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
+    
     func awakeFromNib(color: UIColor) {
         super.awakeFromNib()
         let thumb = thumbImage(radius: thumbRadius, color: color)
@@ -86,7 +63,7 @@ class HueGraindentSlider: UISlider {
     }
     
     private func thumbImage(radius: CGFloat, color: UIColor) -> UIImage {
-            var thumbView: UIView = {
+        let thumbView: UIView = {
             let thumb = UIView()
                    thumb.backgroundColor = color
                    thumb.layer.borderWidth = 0.4
@@ -102,7 +79,20 @@ class HueGraindentSlider: UISlider {
             thumbView.layer.render(in: rendererContext.cgContext)
         }
     }
- 
+    
+    override func trackRect(forBounds bounds: CGRect) -> CGRect {
+        return CGRect(
+            x: bounds.origin.x,
+            y: bounds.origin.y,
+            width: UIScreen.main.bounds.width/2,
+            height: thickness
+        )
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -12,6 +12,4 @@ struct Filter {
     let filterName: String
     var filterEffectValue: Any?
     var filterEffectValueName: String?
-    
-    
 }
