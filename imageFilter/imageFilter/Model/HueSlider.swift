@@ -9,14 +9,14 @@
 import UIKit
 @IBDesignable
 
-class HueGraindentSlider: UISlider {
+class HueSlider: UISlider {
     @IBInspectable var thickness: CGFloat = 4 {
         didSet {
             setup()
         }
     }
     @IBInspectable var thumbRadius: CGFloat = 10
-    
+    //MARK:Define Slider color
     func setup() {
         do {
             self.setMinimumTrackImage(try self.gradientImage(
@@ -27,10 +27,8 @@ class HueGraindentSlider: UISlider {
             size: self.trackRect(forBounds: self.bounds).size,
             colorSet: [UIColor(hue: 1, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.9, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.8, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.7, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.6, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.5, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.4, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.3, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.2, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0.1, saturation: 1, brightness: 1, alpha: 1).cgColor,UIColor(hue: 0, saturation: 1, brightness: 1, alpha: 1).cgColor,]),
                                   for: .normal)
-            
         } catch {
-           print("Unexpected error: \(error).")
-            
+                     print("Unexpected error: \(error).")
         }
     }
     //MARK:gradientImage for customized slider
@@ -51,7 +49,6 @@ class HueGraindentSlider: UISlider {
         UIGraphicsEndImageContext()
         return image!
     }
-
     
     func awakeFromNib(color: UIColor) {
         super.awakeFromNib()

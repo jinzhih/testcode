@@ -16,7 +16,7 @@ class BrightnessSlider: UISlider {
         }
     }
     @IBInspectable var thumbRadius: CGFloat = 10
-    
+    //MARK:Define Slider color
     func setup() {
         do {
             self.setMinimumTrackImage(try self.gradientImage(
@@ -49,7 +49,6 @@ class BrightnessSlider: UISlider {
         UIGraphicsEndImageContext()
         return image!
     }
-    
     
     func awakeFromNib(color: UIColor) {
         super.awakeFromNib()

@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
         mySecondPopUpView.isHidden = true
         orignialImage = imageView.image
     }
-    
+    //MARK: when screen rotates popupview autolayout
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         self.myPopUpContainerView.setNeedsLayout()
         self.myPopUpContainerView.layoutIfNeeded()

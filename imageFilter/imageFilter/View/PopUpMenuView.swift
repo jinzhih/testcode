@@ -15,13 +15,13 @@ protocol DataDelegate {
 
 class PopUpMenuView: UIView {
     var delegate: DataDelegate?
-    var hueSlider: HueGraindentSlider!
+    var hueSlider: HueSlider!
     var satSlider: SaturationSlider!
     var briSlider: BrightnessSlider!
     var hueLable: UILabel!
     var saturationLable: UILabel!
     var brightLable: UILabel!
-    let screenBounds:CGRect = UIScreen.main.bounds
+    
     //MARK: hsb value change function
     @objc func hueNumberValueChanged(sender: UISlider) {
         delegate?.hsbAdjustment(hue: sender.value, sat:satSlider.value, bri: briSlider.value)
@@ -42,7 +42,7 @@ class PopUpMenuView: UIView {
     }
     
     override func awakeFromNib() {
-        hueSlider = HueGraindentSlider(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width/2, height: 4))
+        hueSlider = HueSlider(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width/2, height: 4))
         hueLable = UILabel(frame:CGRect(x: 0, y: 0, width: 106, height: 24))
         hueLable.textColor = UIColor(red: 140, green: 141, blue: 140, alpha: 1)
         hueLable.font = UIFont(name: "SF-UI-Display-Regular.otf", size: 20)
@@ -83,6 +83,7 @@ class PopUpMenuView: UIView {
                              action: #selector(briNumberValueChanged),for: UIControl.Event.valueChanged)
         self.addSubview(briSlider)
         self.addSubview(brightLable)
+        
         slidesAutoLayout()
         lablesAutoLayout()
     }
@@ -140,7 +141,7 @@ class PopUpMenuView: UIView {
         make.right.equalToSuperview()
         }
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         
